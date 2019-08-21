@@ -92,8 +92,8 @@ class JeedooAgent(Agent.Movies):
     if DEBUG: Log('Updating Title: %s' % metadata.title)
 
     # Thumb and Poster
-    imgpath = html.xpath('//div[@class="new-image-box"]/div/a/@href')[0]
-    thumbpath = html.xpath('//div[@class="new-image-box"]/div/a/@href')[0]
+    imgpath = html.xpath('//img[@id="pi"]/@src')[0]
+    thumbpath = html.xpath('//img[@id="pi"]/@src')[0]
     Log('Image URL: %s' % imgpath)
     thumb = HTTP.Request(thumbpath)
     metadata.posters[imgpath] = Proxy.Preview(thumbpath)
